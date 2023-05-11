@@ -18,11 +18,11 @@ steps:
 - script: |
     npm install
     npm run build
+    echo '$(Build.ArtifactStagingDirectory)/build'
   displayName: 'npm install and build'
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact'
   inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)/build'
-      ArtifactName: 'my-react-app'
-      publishLocation: 'Container'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/build'
+    ArtifactName: 'React'
+    publishLocation: 'Container'
