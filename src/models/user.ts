@@ -22,6 +22,20 @@ class User {
         if (response.status === 200)
             return body.id
         return ''
+        // fetch(process.env.REACT_APP_API_URL + 'login/signup', {
+        //     method: 'POST',
+        //     body: JSON.stringify(this),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        // }).then(response => {
+        //     if (response.status === 200)
+        //         return response.json()
+        // }).then(response => {
+        //     if (response !== null)
+        //         return response.id
+        // })
+        // return '';
     }
     static async userLogin(userName: string, Password: string): Promise<string> {
         const response = await fetch(process.env.REACT_APP_API_URL + 'login', {
