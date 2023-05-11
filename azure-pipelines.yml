@@ -17,6 +17,6 @@ steps:
 
 - script: |
     npm install
-    nvm use --lts
+    npm install react-scripts
     npm run build
   displayName: 'npm install and build'
