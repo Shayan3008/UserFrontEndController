@@ -18,11 +18,13 @@ steps:
 - script: |
     npm install
     npm run build
+    cd build
+    zip -r ../my-react-app.zip .
     ls '$(Build.SourcesDirectory)'
   displayName: 'npm install and build'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.SourcesDirectory)/build'
+    PathtoPublish: '$(Build.SourcesDirectory)/my-react-app.zip'
     ArtifactName: 'React'
     publishLocation: 'Container'
